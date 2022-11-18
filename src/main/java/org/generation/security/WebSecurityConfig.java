@@ -21,8 +21,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter  {
 			.httpBasic()
 			.and()
 			.authorizeRequests()
-				//.antMatchers(HttpMethod.POST, "/api/clientes/**").permitAll()				
-				.anyRequest().permitAll()//.authenticated() 
+				//.antMatchers(HttpMethod.POST, "/login").permitAll()				
+				.anyRequest().authenticated() 
 				.and()
 				//.addFilterBefore(new LoginFilter("/login", authenticationManager()),
 				//		UsernamePasswordAuthenticationFilter.class)
