@@ -40,8 +40,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter  {
 			.password("{noop}patrona") //password
 			.roles("ADMIN")
 			.and()
-			.withUser("karla")
-			.password("{noop}textranamos")
+			.withUser("puercoespin")
+			.password("{noop}mamado")
 			.roles("USER");
 	
 	}
