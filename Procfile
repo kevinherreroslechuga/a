@@ -1,1 +1,1 @@
-web: java -jar -Dserver.port=$PORT build/libs/BiitFitness-0.0.1-SNAPSHOT-plain
+web: java -jar -Dserver.port=$PORT build/libs/BiitFitness-0.0.1-SNAPSHOT
