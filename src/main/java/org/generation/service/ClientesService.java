@@ -39,10 +39,10 @@ public class ClientesService implements IClientesService {
 
 	@Override
 	public ClientesDto findClientesByEmail(AuthClientes authClientes) {
-		Clientes clientes =  clientesRepository.findByEmail(authClientes.getEmail())//cambia despues a user en autorisacion
+		Clientes clientes =  clientesRepository.findByEmail(authClientes.getUsername())
 				.orElseThrow(() ->
 				new IllegalStateException
-				("The email " + authClientes.getEmail() + " does not exists"));
+				("The email " + authClientes.getUsername() + " does not exists"));
 		if (!clientes.getContrasena().equals(authClientes.getContrasena()))
 			throw new IllegalStateException("Wrong password");
 			
