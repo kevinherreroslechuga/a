@@ -5,6 +5,9 @@ import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+
 @Configuration
 @SuppressWarnings("deprecation")
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter  {
@@ -20,7 +23,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter  {
 				//.antMatchers(HttpMethod.POST, "/api/clientes").hasRole("USER")
 				//.antMatchers(HttpMethod.PUT, "/api/clientes").hasRole("USER") //.roles("USER","ADMIN")
 				//.antMatchers(HttpMethod.DELETE, "/api/clientes/**").hasRole("ADMIN")				
-			.anyRequest().authenticated() ;//.permitAll()
+				.anyRequest().authenticated() //.permitAll()
+				.and()
+				.addFilterBefore(new LoginFilter("/login", authenticationManager()),
+						UsernamePasswordAuthenticationFilter.class)//Actuará este filtro sobre /login y esto nos da el token JWT
+				.addFilterBefore(new JwtFilter(),UsernamePasswordAuthenticationFilter.class) //Revisará si el token es correcto
+				.csrf().disable();
 			
 								
 	}
