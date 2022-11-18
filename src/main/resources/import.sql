@@ -20,6 +20,8 @@ INSERT INTO `clientes`(`nombre`, `apellido`, `movil`, `direccion`,`email`,`contr
 INSERT INTO `clientes`(`nombre`, `apellido`, `movil`, `direccion`,`email`,`contrasena`,`socio_activo`) VALUES ("Karla", "Garcia", 5521222324,"calle 30 col. Las Vegas","kara@email.com",123,0b1);
 
 
+
+
 INSERT INTO  `ventas`(`created_at`) VALUES(date(now()));
 INSERT INTO  `ventas`(`created_at`) VALUES(date(now()));
 INSERT INTO  `ventas`(`created_at`) VALUES(date(now()));

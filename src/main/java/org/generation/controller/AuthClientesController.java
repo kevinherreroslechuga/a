@@ -8,9 +8,9 @@ import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
 
-@RestController
-@RequestMapping("/login")
-@CrossOrigin(origins="*")
+//@RestController
+//@RequestMapping("/login")
+//@CrossOrigin(origins="*")
 public class AuthClientesController {
 
 	@Autowired

@@ -21,13 +21,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter  {
 			.httpBasic()
 			.and()
 			.authorizeRequests()
-				.antMatchers(HttpMethod.GET, "/api/clientes/**").permitAll()				
-				.anyRequest().authenticated() 
+				//.antMatchers(HttpMethod.POST, "/api/clientes/**").permitAll()				
+				.anyRequest().permitAll()//.authenticated() 
 				.and()
-				.addFilterBefore(new LoginFilter("/login", authenticationManager()),
-						UsernamePasswordAuthenticationFilter.class)
-				.addFilterBefore(new JwtFilter(),UsernamePasswordAuthenticationFilter.class)
+				//.addFilterBefore(new LoginFilter("/login", authenticationManager()),
+				//		UsernamePasswordAuthenticationFilter.class)
+				//.addFilterBefore(new JwtFilter(),UsernamePasswordAuthenticationFilter.class)
 				.csrf().disable();
+				
 			
 								
 	}
@@ -41,8 +42,24 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter  {
 			.and()
 			.withUser("puercoespin")
 			.password("{noop}mamado")
-			.roles("USER");
-	
+			.roles("USER")
+			.and()
+			.withUser("elizabeth@gmail.com")
+			.password("{noop}12345678")
+			.roles("student")
+			.and()
+			.withUser("jessi@gmail.com")
+			.password("{noop}1234567")
+			.roles("student")
+			.and()
+			.withUser("kevin@gmail.com")
+			.password("{noop}123456")
+			.roles("student")
+			.and()
+			.withUser("rodrigo@gmail.com")
+			.password("{noop}12345678")
+			.roles("USER4");
+		
 	}
 	
 }
