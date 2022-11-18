@@ -20,17 +20,19 @@ public class Clientes extends ClientesAbstract {
 		
 	 	@JsonIgnore
 		@Column(name="contrasena", updatable=false, length=CONTRASENA_MAX_LENGTH)	
-		private String contrasena;
-		@Column(name="Socio_activo")
+		private String password;
+	 	@Column(name="Socio_activo")
 		protected Boolean socioActivo;
 		
+		public String getPassword() {
+			return password;
+		}
+		public void setPassword(String password) {
+			this.password = password;
+		}
 		
-		public String getContrasena() {
-			return contrasena;
-		}
-		public void setContrasena(String contrasena) {
-			this.contrasena = contrasena;
-		}
+		
+		
 		public Boolean getSocio_activo() {
 			return socioActivo;
 		}

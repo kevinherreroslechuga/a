@@ -5,8 +5,14 @@ package org.generation.entity.dto;
    
 	public class AuthClientes{
 		private String username;	
-		private String contrasena;
+		private String password;
 		
+		public String getPassword() {
+			return password;
+		}
+		public void setPassword(String password) {
+			this.password = password;
+		}
 		public String getUsername() {
 			return username;
 		}
@@ -14,12 +20,7 @@ package org.generation.entity.dto;
 			this.username = username;
 		}
 	
-		public String getContrasena() {
-			return contrasena;
-		}
-		public void setContrasena(String contrasena) {
-			this.contrasena = contrasena;
-		}
+		
 		
 		
 		

@@ -17,7 +17,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-import org.springframework.security.web.util.matcher.RequestMatcher;
+
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -36,7 +36,7 @@ public class LoginFilter extends AbstractAuthenticationProcessingFilter {
 		//Obtenemos el body de la petición, que vendrá en formato JSON
 		InputStream body = request.getInputStream();
 		
-		//Asumimos que el Json tiene el formato {"username":"hilario", "password":"solovino" }
+		
 		// realizamos un mapeo de nuestra clase AuthCustomer para obtener los datos
 		AuthClientes authCustomer =  new ObjectMapper().readValue(body, AuthClientes.class);
 		
@@ -44,7 +44,7 @@ public class LoginFilter extends AbstractAuthenticationProcessingFilter {
 		return getAuthenticationManager().authenticate(
 				new UsernamePasswordAuthenticationToken(
 						authCustomer.getUsername(), 
-						authCustomer.getContrasena(), 
+						authCustomer.getPassword(), 
 						Collections.emptyList())
 				);
 				

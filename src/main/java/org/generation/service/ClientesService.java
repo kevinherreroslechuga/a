@@ -43,7 +43,7 @@ public class ClientesService implements IClientesService {
 				.orElseThrow(() ->
 				new IllegalStateException
 				("The email " + authClientes.getUsername() + " does not exists"));
-		if (!clientes.getContrasena().equals(authClientes.getContrasena()))
+		if (!clientes.getPassword().equals(authClientes.getPassword()))
 			throw new IllegalStateException("Wrong password");
 			
 		return convertClientesToDto(clientes);
