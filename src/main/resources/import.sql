@@ -28,11 +28,11 @@ INSERT INTO  ventas(created_at) VALUES(date(now()));
 INSERT INTO  ventas(created_at) VALUES(date(now()));
 INSERT INTO  ventas(created_at) VALUES(date(now()));
 
-INSERT INTO  detalle_venta( cantidad) value(  2);
-INSERT INTO  detalle_venta( cantidad) value(  3);
-INSERT INTO  detalle_venta( cantidad) value( 1);
-INSERT INTO  detalle_venta( cantidad) value( 4);
-INSERT INTO  detalle_venta( cantidad) value( 5);    
+INSERT INTO  detalle_venta( cantidad, descuento) value(  2, 2.5);
+INSERT INTO  detalle_venta( cantidad, descuento) value(  3, 15.5);
+INSERT INTO  detalle_venta( cantidad, descuento) value( 1, 10.5);
+INSERT INTO  detalle_venta( cantidad, descuento) value( 4, 50);
+INSERT INTO  detalle_venta( cantidad, descuento) value( 5, 25);    
 
 
 

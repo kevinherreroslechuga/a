@@ -21,7 +21,7 @@ public class Clientes extends ClientesAbstract {
 	 	@JsonIgnore
 		@Column(name="contrasena", updatable=false, length=CONTRASENA_MAX_LENGTH)	
 		private String password;
-	 	@Column(name="Socio_activo")
+	 	@Column(name="socio_activo")
 		protected Boolean socioActivo;
 		
 		public String getPassword() {
