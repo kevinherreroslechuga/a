@@ -5,8 +5,6 @@ import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
 @Configuration
 @SuppressWarnings("deprecation")
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter  {
@@ -31,7 +29,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter  {
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.inMemoryAuthentication()
 			.withUser("eli") //username
-			.password("{noop}lapatrona") //password
+			.password("{noop}patrona") //password
 			.roles("ADMIN")
 			.and()
 			.withUser("karla")
