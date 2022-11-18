@@ -32,7 +32,7 @@ public class ClientesService implements IClientesService {
 				.orElseThrow(() -> 
 				new IllegalStateException
 				("The user with id " + id + " does not exist"));
-		if(!clientes.getSocio_activo())
+		if(!clientes.getSocioActivo())
 			throw new IllegalStateException("The user with id " + id + " does not exist");
 			return clientes;
 	}
@@ -66,7 +66,7 @@ public class ClientesService implements IClientesService {
 		else if(!(clientes.getApellido().length() < Clientes.APELLIDO_MAX_LENGTH))			
 			throw new IllegalStateException("Lastname length is greater than "+ Clientes.APELLIDO_MAX_LENGTH);
 				
-		clientes.setSocio_activo(true);
+		clientes.setSocioActivo(true);
 		return convertClientesToDto(clientesRepository.save(clientes));		
 	}
 	
@@ -77,14 +77,14 @@ public class ClientesService implements IClientesService {
 		clientesInDatabase.setApellido(clientes.getApellido());
 		clientesInDatabase.setMovil(clientes.getMovil());
 		clientesInDatabase.setDireccion(clientes.getDireccion());
-		clientesInDatabase.setSocio_activo(true);				
+		clientesInDatabase.setSocioActivo(true);				
 		return saveClientes(clientesInDatabase);	
 	}
 	
 	@Override
 	public String deleteClientesById(Long id) throws Exception {
 		Clientes clientesInDatabase = findClientesById(id);
-		clientesInDatabase.setSocio_activo(false);		
+		clientesInDatabase.setSocioActivo(false);		
 		clientesRepository.save(clientesInDatabase);
 		return "El Miembro ha sido borrado";						
 	}

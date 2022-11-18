@@ -18,7 +18,7 @@ public abstract class ClientesAbstract {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY )
-	@Column(name="id_cliente")
+	@Column(name="idcliente")
 	protected Long idCliente;
 	@Column(name="nombre", length=NOMBRE_MAX_LENGTH)
 	protected String nombre;

@@ -33,10 +33,10 @@ public class Clientes extends ClientesAbstract {
 		
 		
 		
-		public Boolean getSocio_activo() {
+		public Boolean getSocioActivo() {
 			return socioActivo;
 		}
-		public void setSocio_activo(Boolean socio_activo) {
+		public void setSocioActivo(Boolean socio_activo) {
 			this.socioActivo = socio_activo;
 		}
 		
